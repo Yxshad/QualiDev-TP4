@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.params.provider.MethodSource;
 
-public class TennisTest2 {
+public class TennisSolarLint {
 
     public static Stream<Object[]> getAllScores() {
         return Stream.of(new Object[][]{
@@ -64,7 +64,7 @@ public class TennisTest2 {
     @ParameterizedTest
     @MethodSource("getAllScores")
     public void checkAllScoresTennisGame2(int player1Points, int player2Points, String expectedScore) {
-        TennisGame2 game = new TennisGame2("player1", "player2");
+        TennisSolarLint game = new TennisSolarLint("player1", "player2");
         checkAllScores(player1Points, player2Points, expectedScore, game);
     }
 
