@@ -1,9 +1,8 @@
-import org.junit.jupiter.params.ParameterizedTest;
+import com.elavergne001.tennis_sonar_lint.TennisGame;
 
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.params.provider.MethodSource;
 
 public class TennisSonarLint {
 
