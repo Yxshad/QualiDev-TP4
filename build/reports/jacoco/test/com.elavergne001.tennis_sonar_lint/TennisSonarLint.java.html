@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TennisSonarLint.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TennisSonarCloud</a> &gt; <a href="index.source.html" class="el_package">com.elavergne001.tennis_sonar_lint</a> &gt; <span class="el_source">TennisSonarLint.java</span></div><h1>TennisSonarLint.java</h1><pre class="source lang-java linenums">package com.elavergne001.tennis_sonar_lint;
+
+public class TennisSonarLint implements TennisGame
+{
+<span class="nc" id="L5">    private int p1Point = 0;</span>
+<span class="nc" id="L6">    private int p2Point = 0;</span>
+
+<span class="nc" id="L8">    private String p1Res = &quot;&quot;;</span>
+<span class="nc" id="L9">    private String p2Res = &quot;&quot;;</span>
+
+    public static final String FORTY = &quot;Forty&quot;;
+    public static final String FIFTEEN = &quot;Fifteen&quot;;
+    public static final String THIRTY = &quot;Thirty&quot;;
+
+<span class="nc" id="L15">    public TennisSonarLint(String player1Name, String player2Name) {</span>
+<span class="nc" id="L16">    }</span>
+
+    public String getScore() {
+<span class="nc" id="L19">        String score = &quot;&quot;;</span>
+<span class="nc bnc" id="L20" title="All 4 branches missed.">        if (p1Point == p2Point &amp;&amp; p1Point &lt; 4) {</span>
+<span class="nc bnc" id="L21" title="All 2 branches missed.">            if (p1Point == 0)</span>
+<span class="nc" id="L22">                score = &quot;Love&quot;;</span>
+<span class="nc bnc" id="L23" title="All 2 branches missed.">            if (p1Point == 1)</span>
+<span class="nc" id="L24">                score = FIFTEEN;</span>
+<span class="nc bnc" id="L25" title="All 2 branches missed.">            if (p1Point == 2)</span>
+<span class="nc" id="L26">                score = THIRTY;</span>
+<span class="nc" id="L27">            score += &quot;-All&quot;;</span>
+        }
+<span class="nc bnc" id="L29" title="All 4 branches missed.">        if (p1Point == p2Point &amp;&amp; p1Point &gt;= 3)</span>
+<span class="nc" id="L30">            score = &quot;Deuce&quot;;</span>
+<span class="nc" id="L31">        return score;</span>
+    }
+
+    public String getScore2() {
+<span class="nc" id="L35">        String score = &quot;&quot;;</span>
+<span class="nc bnc" id="L36" title="All 4 branches missed.">        if (p1Point &gt; 0 &amp;&amp; p2Point == 0) {</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">            if (p1Point == 1)</span>
+<span class="nc" id="L38">                p1Res = FIFTEEN;</span>
+<span class="nc bnc" id="L39" title="All 2 branches missed.">            if (p1Point == 2)</span>
+<span class="nc" id="L40">                p1Res = THIRTY;</span>
+<span class="nc bnc" id="L41" title="All 2 branches missed.">            if (p1Point == 3)</span>
+<span class="nc" id="L42">                p1Res = FORTY;</span>
+
+<span class="nc" id="L44">            p2Res = &quot;Love&quot;;</span>
+<span class="nc" id="L45">            score = p1Res + &quot;-&quot; + p2Res;</span>
+        }
+<span class="nc" id="L47">        return score;</span>
+    }
+
+    public String getScore3() {
+<span class="nc" id="L51">        String score = &quot;&quot;;</span>
+<span class="nc bnc" id="L52" title="All 4 branches missed.">        if (p2Point &gt; 0 &amp;&amp; p1Point == 0) {</span>
+<span class="nc bnc" id="L53" title="All 2 branches missed.">            if (p2Point == 1)</span>
+<span class="nc" id="L54">                p2Res = FIFTEEN;</span>
+<span class="nc bnc" id="L55" title="All 2 branches missed.">            if (p2Point == 2)</span>
+<span class="nc" id="L56">                p2Res = THIRTY;</span>
+<span class="nc bnc" id="L57" title="All 2 branches missed.">            if (p2Point == 3)</span>
+<span class="nc" id="L58">                p2Res = FORTY;</span>
+
+<span class="nc" id="L60">            p1Res = &quot;Love&quot;;</span>
+<span class="nc" id="L61">            score = p1Res + &quot;-&quot; + p2Res;</span>
+        }
+<span class="nc" id="L63">        return score;</span>
+    }
+    public String getScore4() {
+<span class="nc" id="L66">        String score = &quot;&quot;;</span>
+<span class="nc bnc" id="L67" title="All 4 branches missed.">        if (p1Point &gt; p2Point &amp;&amp; p1Point &lt; 4) {</span>
+<span class="nc bnc" id="L68" title="All 2 branches missed.">            if (p1Point == 2)</span>
+<span class="nc" id="L69">                p1Res = THIRTY;</span>
+<span class="nc bnc" id="L70" title="All 2 branches missed.">            if (p1Point == 3)</span>
+<span class="nc" id="L71">                p1Res = FORTY;</span>
+<span class="nc bnc" id="L72" title="All 2 branches missed.">            if (p2Point == 1)</span>
+<span class="nc" id="L73">                p2Res = FIFTEEN;</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">            if (p2Point == 2)</span>
+<span class="nc" id="L75">                p2Res = THIRTY;</span>
+<span class="nc" id="L76">            score = p1Res + &quot;-&quot; + p2Res;</span>
+        }
+<span class="nc" id="L78">        return score;</span>
+    }
+
+    public String getScore5() {
+<span class="nc" id="L82">        String score = &quot;&quot;;</span>
+<span class="nc bnc" id="L83" title="All 4 branches missed.">        if (p2Point &gt; p1Point &amp;&amp; p2Point &lt; 4)</span>
+        {
+<span class="nc bnc" id="L85" title="All 2 branches missed.">            if (p2Point ==2)</span>
+<span class="nc" id="L86">                p2Res =THIRTY;</span>
+<span class="nc bnc" id="L87" title="All 2 branches missed.">            if (p2Point ==3)</span>
+<span class="nc" id="L88">                p2Res = FORTY;</span>
+<span class="nc bnc" id="L89" title="All 2 branches missed.">            if (p1Point ==1)</span>
+<span class="nc" id="L90">                p1Res =FIFTEEN;</span>
+<span class="nc bnc" id="L91" title="All 2 branches missed.">            if (p1Point ==2)</span>
+<span class="nc" id="L92">                p1Res =THIRTY;</span>
+<span class="nc" id="L93">            score = p1Res + &quot;-&quot; + p2Res;</span>
+        }
+<span class="nc" id="L95">        return score;}</span>
+
+    public String getScore6() {
+<span class="nc" id="L98">        String score = &quot;&quot;;</span>
+<span class="nc bnc" id="L99" title="All 4 branches missed.">        if (p1Point &gt; p2Point &amp;&amp; p2Point &gt;= 3)</span>
+        {
+<span class="nc" id="L101">            score = &quot;Advantage player1&quot;;</span>
+        }
+        
+<span class="nc bnc" id="L104" title="All 4 branches missed.">        if (p2Point &gt; p1Point &amp;&amp; p1Point &gt;= 3)</span>
+        {
+<span class="nc" id="L106">            score = &quot;Advantage player2&quot;;</span>
+        }
+        
+<span class="nc bnc" id="L109" title="All 6 branches missed.">        if (p1Point &gt;=4 &amp;&amp; p2Point &gt;=0 &amp;&amp; (p1Point - p2Point)&gt;=2)</span>
+        {
+<span class="nc" id="L111">            score = &quot;Win for player1&quot;;</span>
+        }
+<span class="nc bnc" id="L113" title="All 6 branches missed.">        if (p2Point &gt;=4 &amp;&amp; p1Point &gt;=0 &amp;&amp; (p2Point - p1Point)&gt;=2)</span>
+        {
+<span class="nc" id="L115">            score = &quot;Win for player2&quot;;</span>
+        }
+<span class="nc" id="L117">        return score;</span>
+    }
+    
+    public void setP1Score(int number){
+        
+<span class="nc bnc" id="L122" title="All 2 branches missed.">        for (int i = 0; i &lt; number; i++)</span>
+        {
+<span class="nc" id="L124">            p1Score();</span>
+        }
+            
+<span class="nc" id="L127">    }</span>
+    
+    public void setP2Score(int number){
+        
+<span class="nc bnc" id="L131" title="All 2 branches missed.">        for (int i = 0; i &lt; number; i++)</span>
+        {
+<span class="nc" id="L133">            p2Score();</span>
+        }
+            
+<span class="nc" id="L136">    }</span>
+    
+    public void p1Score(){
+<span class="nc" id="L139">        p1Point++;</span>
+<span class="nc" id="L140">    }</span>
+    
+    public void p2Score(){
+<span class="nc" id="L143">        p2Point++;</span>
+<span class="nc" id="L144">    }</span>
+
+    public void wonPoint(String player) {
+<span class="nc bnc" id="L147" title="All 2 branches missed.">        if (player.equals(&quot;player1&quot;))</span>
+<span class="nc" id="L148">            p1Score();</span>
+        else
+<span class="nc" id="L150">            p2Score();</span>
+<span class="nc" id="L151">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
