@@ -10,7 +10,7 @@ public class TennisSonarLint implements TennisGame
     public TennisSonarLint(String player1Name, String player2Name) {
     }
 
-    public String getScore1() {
+    public String getScore() {
         String score = "";
         if (p1Point == p2Point && p1Point < 4) {
             if (p1Point == 0)
